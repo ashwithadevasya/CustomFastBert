@@ -572,6 +572,7 @@ class MyBertLearner(Learner):
                     label = label_cols[index]
                     row[label] = cell
             output_dict.append(row)
+        return output_dict
 
     # Begin code for LR Finder
     # Courtesy https://github.com/davidtvs/pytorch-lr-finder
