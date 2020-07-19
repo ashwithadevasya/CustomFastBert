@@ -562,13 +562,12 @@ class MyBertLearner(Learner):
         return self.filter_threshold(threshold, result_df, label_cols)
 
     def filter_threshold(self, threshold, output, label_cols):
-        row = dict()
         output_dict = list()
-        for row_no in range(0, output.shape[0] - 1):
+        for row_no in range(0, output.shape[0]):
             row = dict()
-            for index in range(0, 7):
+            for index in range(0, 8):
                 cell = output.iloc[row_no, index]
-                if (cell > threshold):
+                if cell > threshold:
                     label = label_cols[index]
                     row[label] = cell
             output_dict.append(row)
